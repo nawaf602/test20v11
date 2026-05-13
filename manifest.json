@@ -1,0 +1,18 @@
+{
+  "name": "مرشد الحرم الذكي",
+  "short_name": "مرشد الحرم",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#00897B",
+  "theme_color": "#00897B",
+  "orientation": "portrait-primary",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
