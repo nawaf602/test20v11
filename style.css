@@ -1,0 +1,137 @@
+:root {
+  --primary: #00897b;
+  --primary-dark: #00695c;
+  --bg: #f6f8fa;
+  --card: #ffffff;
+  --text: #263238;
+  --muted: #607d8b;
+  --border: #dce3e6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  direction: rtl;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--primary), #004d40);
+  color: #fff;
+  padding: 28px 18px;
+  text-align: center;
+}
+
+.hero__badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid rgba(255,255,255,.45);
+  border-radius: 999px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.hero h1 { margin: 0 0 8px; font-size: 30px; }
+.hero p { margin: 0 auto; max-width: 720px; opacity: .92; line-height: 1.8; }
+
+.app-shell {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 18px;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.05);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(170px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+label { font-weight: 700; color: var(--text); }
+
+select, textarea, button {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 13px;
+  font-size: 16px;
+  font-family: inherit;
+  background: #fff;
+}
+
+textarea { resize: vertical; line-height: 1.7; }
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: 0;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover { background: var(--primary-dark); }
+button.secondary { background: #e0f2f1; color: #004d40; }
+button.secondary:hover { background: #b2dfdb; }
+
+.toggle-row {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.toggle-row input { width: auto; transform: scale(1.15); }
+
+.query-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(160px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.hint { color: var(--muted); line-height: 1.7; }
+.hidden { display: none; }
+.instructions ol { line-height: 2; font-size: 17px; }
+.route-summary {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f1f8e9;
+  border-radius: 12px;
+  color: #33691e;
+  line-height: 1.8;
+}
+
+.map-card svg {
+  width: 100%;
+  min-height: 340px;
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  background: radial-gradient(circle at center, #fff, #eef7f6);
+}
+
+footer {
+  text-align: center;
+  padding: 18px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 760px) {
+  .controls, .query-actions { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 24px; }
+  .app-shell { padding: 12px; }
+}
