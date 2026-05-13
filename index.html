@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#00897B" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="مرشد الحرم" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="icons/icon.svg" />
+    <link rel="icon" href="icons/icon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <title>مرشد الحرم الذكي</title>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__badge">PWA تجريبي</div>
+      <h1>مرشد الحرم الذكي</h1>
+      <p>تطبيق إرشاد متعدد اللغات يساعد المرشد على توجيه ضيوف الرحمن بسرعة وبأسلوب واضح.</p>
+    </header>
+
+    <main class="app-shell">
+      <section class="card controls" aria-label="إعدادات المسار">
+        <label for="language">لغة الضيف</label>
+        <select id="language"></select>
+
+        <label for="start">موقع المرشد</label>
+        <select id="start"></select>
+
+        <label for="destination">وجهة الضيف</label>
+        <select id="destination"></select>
+
+        <label class="toggle-row" for="accessibleRoute">
+          <input type="checkbox" id="accessibleRoute" checked />
+          تفضيل المسار الميسر بالمصاعد وتجنب السلالم
+        </label>
+
+        <button id="compute" type="button">احسب المسار</button>
+      </section>
+
+      <section class="card query-card" aria-label="سؤال الضيف">
+        <h2>سؤال الضيف</h2>
+        <textarea id="guestQuestion" rows="4" placeholder="مثال: حاج تركي يريد الذهاب إلى المطاف في الدور الثاني من بوابة 100"></textarea>
+        <div class="query-actions">
+          <button id="understand" type="button" class="secondary">افهم السؤال واقترح الوجهة</button>
+          <button id="speak" type="button" class="secondary">انطق الإرشادات</button>
+        </div>
+        <p id="understanding" class="hint"></p>
+      </section>
+
+      <section id="instructions" class="card instructions hidden" aria-label="تعليمات المسار">
+        <h2>التعليمات</h2>
+        <ol id="steps"></ol>
+        <div id="routeSummary" class="route-summary"></div>
+      </section>
+
+      <section class="card map-card" aria-label="خريطة مبسطة">
+        <h2>رسم مبسط للمسار</h2>
+        <svg id="routeMap" viewBox="0 0 760 420" role="img" aria-label="رسم مسار مبسط"></svg>
+      </section>
+    </main>
+
+    <footer>
+      <small>هذا تطبيق تجريبي غير رسمي، وبياناته تقريبية. يجب استبدالها ببيانات معتمدة قبل الاستخدام التشغيلي داخل المسجد الحرام.</small>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
